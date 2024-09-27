@@ -1,8 +1,6 @@
-package br.com.bcb.api;
+package br.com.bcb.api.cliente;
 
 import lombok.*;
-
-import java.time.LocalDate;
 
 @Getter
 @Setter

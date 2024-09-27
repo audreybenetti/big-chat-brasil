@@ -1,6 +1,6 @@
 package br.com.bcb.repository;
 
-import br.com.bcb.api.ClienteRequest;
+import br.com.bcb.api.cliente.ClienteRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

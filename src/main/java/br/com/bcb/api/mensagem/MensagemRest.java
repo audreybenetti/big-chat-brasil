@@ -1,6 +1,6 @@
-package br.com.bcb.api;
+package br.com.bcb.api.mensagem;
 
-import br.com.bcb.business.MensagemService;
+import br.com.bcb.business.mensagem.MensagemService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

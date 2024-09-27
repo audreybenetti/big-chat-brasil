@@ -1,6 +1,11 @@
-package br.com.bcb.business;
+package br.com.bcb.business.mensagem;
 
-import br.com.bcb.api.*;
+import br.com.bcb.api.cliente.ClienteResponse;
+import br.com.bcb.api.cliente.TipoPlanoEnum;
+import br.com.bcb.api.mensagem.MensagemBatchRequest;
+import br.com.bcb.api.mensagem.MensagemRequest;
+import br.com.bcb.api.mensagem.TipoMensagemEnum;
+import br.com.bcb.business.ClienteService;
 import br.com.bcb.config.exceptions.BusinessException;
 
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package br.com.bcb.api;
+package br.com.bcb.api.cliente;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

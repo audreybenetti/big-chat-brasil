@@ -1,6 +1,6 @@
-package br.com.bcb.business;
+package br.com.bcb.business.mensagem;
 
-import br.com.bcb.api.TipoMensagemEnum;
+import br.com.bcb.api.mensagem.TipoMensagemEnum;
 import org.springframework.stereotype.Service;
 
 @Service

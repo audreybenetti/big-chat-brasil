@@ -1,8 +1,8 @@
 package br.com.bcb.business;
 
-import br.com.bcb.api.ClienteRequest;
-import br.com.bcb.api.ClienteResponse;
-import br.com.bcb.api.TipoPlanoEnum;
+import br.com.bcb.api.cliente.ClienteRequest;
+import br.com.bcb.api.cliente.ClienteResponse;
+import br.com.bcb.api.cliente.TipoPlanoEnum;
 import br.com.bcb.repository.ClienteEntity;
 import br.com.bcb.repository.ClienteRepository;
 import br.com.bcb.config.exceptions.NoRecordsFoundException;

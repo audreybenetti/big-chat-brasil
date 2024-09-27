@@ -1,4 +1,4 @@
-package br.com.bcb.api;
+package br.com.bcb.api.cliente;
 
 import br.com.bcb.business.ClienteService;
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,4 +1,4 @@
-package br.com.bcb.api;
+package br.com.bcb.api.cliente;
 
 import br.com.bcb.repository.ClienteEntity;
 import lombok.*;
