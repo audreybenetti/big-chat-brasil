@@ -1,4 +1,4 @@
-package br.com.bcb.utils.exceptions;
+package br.com.bcb.config.exceptions;
 
 import lombok.Getter;
 

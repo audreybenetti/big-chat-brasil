@@ -5,7 +5,7 @@ import br.com.bcb.api.ClienteResponse;
 import br.com.bcb.api.TipoPlanoEnum;
 import br.com.bcb.repository.ClienteEntity;
 import br.com.bcb.repository.ClienteRepository;
-import br.com.bcb.utils.exceptions.NoRecordsFoundException;
+import br.com.bcb.config.exceptions.NoRecordsFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +16,6 @@ import java.math.BigDecimal;
 public class ClienteService {
 
     private ClienteRepository clienteRepository;
-
-    /*Incluir creditos para um cliente
-    Consultar saldo de um cliente
-    Alterar limite de um cliente
-    Alterar plano de um cliente
-    Ver dados de um cliente*/
 
     public ClienteResponse salvarCliente(ClienteRequest clienteRequest) {
         ClienteEntity entity = ClienteEntity.of(clienteRequest);
