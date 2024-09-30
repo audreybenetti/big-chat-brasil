@@ -12,6 +12,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+api:
   security:
     filter:
       ignore:
@@ -20,6 +22,8 @@ spring:
           - /swagger-ui/**
           - /swagger-resources/**
           - /webjars/**
+    token:
+      secret: my-secret-key
 
 springdoc:
   api-docs:

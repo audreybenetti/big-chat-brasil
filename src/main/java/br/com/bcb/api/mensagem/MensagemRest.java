@@ -24,9 +24,9 @@ public class MensagemRest {
             @ApiResponse(responseCode = "200", description = "Requisição executada com sucesso."),
             @ApiResponse(responseCode = "500", description = "Erro não esperado")
     })
-    public ResponseEntity<?> enviarMensagem(@RequestBody MensagemRequest mensagemRequest){
+    public ResponseEntity<Void> enviarMensagem(@RequestBody MensagemRequest mensagemRequest){
         mensagemService.processarMensagem(mensagemRequest);
-        return ResponseEntity.ok("Mensagem recebida e em processamento.");
+        return ResponseEntity.ok().build();
     }
 
     @Operation(description = "Envia mensagens.")
@@ -35,8 +35,8 @@ public class MensagemRest {
             @ApiResponse(responseCode = "200", description = "Requisição executada com sucesso."),
             @ApiResponse(responseCode = "500", description = "Erro não esperado")
     })
-    public ResponseEntity<?> enviarMensagemEmLote(@RequestBody MensagemBatchRequest mensagemBatchRequest){
+    public ResponseEntity<Void> enviarMensagemEmLote(@RequestBody MensagemBatchRequest mensagemBatchRequest){
         mensagemService.processarMensagensEmLote(mensagemBatchRequest);
-        return ResponseEntity.ok("Mensagens recebidas e em processamento.");
+        return ResponseEntity.ok().build();
     }
 }

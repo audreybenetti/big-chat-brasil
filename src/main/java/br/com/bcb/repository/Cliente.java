@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name = "clientes")
-public class ClienteEntity {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -44,14 +44,17 @@ public class ClienteEntity {
     @Column(name = "saldo")
     private Double saldo;
 
+    @Column(name = "credito_utilizado")
+    private Double creditoUtilizado;
+
     @Column(name = "limite_credito")
     private Double limiteCredito;
 
     @Column(name = "data_cadastro")
     private LocalDate dataCadastro;
 
-    public static ClienteEntity of(ClienteRequest request) {
-        return ClienteEntity.builder()
+    public static Cliente of(ClienteRequest request) {
+        return Cliente.builder()
                 .nome(request.getNome())
                 .email(request.getEmail())
                 .telefone(request.getTelefone())

@@ -1,6 +1,6 @@
 package br.com.bcb.api.cliente;
 
-import br.com.bcb.repository.ClienteEntity;
+import br.com.bcb.repository.Cliente;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -21,10 +21,11 @@ public class ClienteResponse {
     private String cpfResponsavel;
     private String nomePlano;
     private Double saldo;
+    private Double creditoUtilizado;
     private Double limiteCredito;
     private LocalDate dataCadastro;
 
-    public static ClienteResponse of(ClienteEntity entity) {
+    public static ClienteResponse of(Cliente entity) {
         return ClienteResponse.builder()
                 .nome(entity.getNome())
                 .email(entity.getEmail())

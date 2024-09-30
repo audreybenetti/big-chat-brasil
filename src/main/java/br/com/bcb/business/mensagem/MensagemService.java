@@ -26,6 +26,7 @@ public class MensagemService {
     public void processarMensagem(MensagemRequest mensagemRequest) {
         ClienteResponse cliente = clienteService.buscarClientePorCnpj(mensagemRequest.getCnpjCliente());
         validaSaldoDisponivel(cliente, 1);
+        atualizarSaldoOuLimite(cliente, 1);
         MensagemSender mensagemSender = verificaTipoMensagem(mensagemRequest.getTipoMensagem());
         mensagemSender.enviar(cliente.getTelefone(), mensagemRequest.getTelefone(), mensagemRequest.getMensagem());
     }
@@ -35,6 +36,7 @@ public class MensagemService {
 
         int quantidadeMensagens = mensagemBatchRequest.getTelefones().size();
         validaSaldoDisponivel(cliente, quantidadeMensagens);
+        atualizarSaldoOuLimite(cliente, quantidadeMensagens);
 
         MensagemSender mensagemSender = verificaTipoMensagem(mensagemBatchRequest.getTipoMensagem());
         mensagemBatchRequest.getTelefones().forEach(telefone ->
@@ -60,5 +62,15 @@ public class MensagemService {
                 throw new BusinessException("Limite de crédito excedido.");
             }
         }
+    }
+
+    private void atualizarSaldoOuLimite(ClienteResponse cliente, int quantidadeMensagens) {
+        double saldo;
+        if (cliente.getNomePlano().equals(TipoPlanoEnum.PRE_PAGO.getDescricao())) {
+            saldo = (cliente.getSaldo() - (quantidadeMensagens * PRECO_POR_MENSAGEM_PRE_PAGO));
+        } else {
+            saldo = (cliente.getLimiteCredito() - (quantidadeMensagens * CREDITO_POR_MENSAGEM_POS_PAGO));
+        }
+        clienteService.atualizarSaldo(cliente.getNomePlano(),  cliente.getCnpj(),  saldo);
     }
 }
